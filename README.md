@@ -92,3 +92,18 @@ LICENSES/, NOTICE               … Licenses and notices
 
 - SDK トークンおよび Wi-Fi パスワードはファームウェアバイナリには含まれていません（Web Serial を通じて本体 NVS に直接安全に保存されます）。
 - M5StickS3 を工場出荷状態（UiFlow2 等）に戻したい場合は、M5Burner で `STICKS3` を選択して書き戻すことができます。
+
+---
+
+### 免責事項 / Disclaimer
+
+#### 日本語
+1. **非公式・無保証（AS-IS）**: 本ツールおよび同梱のファームウェアは、有志によるオープンソースのカスタムプロジェクトであり、現状有姿（AS-IS）で提供されます。明示・黙示を問わず、その動作、正確性、特定目的への適合性について一切の保証はありません。
+2. **公式サポートなし**: Meta 公式の Muse Gadget SDK 自体も実験的なオープンソースプロジェクトであり、ESP32 等での動作や将来のサービス継続性に関して Meta による公式の動作保証やサポートは提供されていません。また、本ツールは Meta、Muse、M5Stack との直接の提携関係はなく、いかなる公式サポートも受けられません。
+3. **自己責任の原則**: ファームウェアの書き込み、設定変更、デバイスの利用はすべて利用者の自己責任で行ってください。本ツールの使用または使用不能により生じたデバイスの故障・文鎮化、データ消失、発熱・バッテリートラブル、その他いかなる損害についても、製作者および関係者は一切の責任を負いません。
+
+#### English
+1. **Unofficial & As-Is**: This tool and the included firmware are community-contributed open source works provided on an "AS-IS" basis, without warranties of any kind, express or implied, including fitness for a particular purpose.
+2. **No Official Support**: Meta's Muse Gadget SDK itself is an experimental open-source project; Meta provides no official warranty or product support for ESP32 devices. This tool is not affiliated with Meta, Muse, or M5Stack, and no official support is provided.
+3. **Use at Your Own Risk**: Flashing firmware, modifying settings, and using the device are entirely at your own risk. The authors and contributors shall not be liable for any device bricking, hardware malfunctions, data loss, battery/thermal issues, or any other damages arising from the use of this tool.
+
