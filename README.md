@@ -1,5 +1,10 @@
 # Muse Gadget Flasher for M5StickS3
 
+[![Open Web Flasher](https://img.shields.io/badge/Web%20Flasher-Open%20in%20Browser-blue?style=for-the-badge&logo=googlechrome&logoColor=white)](https://rev-hermit.github.io/muse-gadget-flasher/)  
+👉 **Web 版はこちらから直接利用できます:** **[https://rev-hermit.github.io/muse-gadget-flasher/](https://rev-hermit.github.io/muse-gadget-flasher/)**
+
+---
+
 [English](#english) | [日本語](#japanese)
 
 ---
