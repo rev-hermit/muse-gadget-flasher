@@ -1,0 +1,29 @@
+{
+  "name": "Muse Gadget (M5StickS3)",
+  "version": "999.0.0-noto",
+  "new_install_prompt_erase": true,
+  "min_flash_bytes": 8265728,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        {
+          "path": "bootloader.bin",
+          "offset": 0
+        },
+        {
+          "path": "partition-table.bin",
+          "offset": 65536
+        },
+        {
+          "path": "ota_data_initial.bin",
+          "offset": 118784
+        },
+        {
+          "path": "muse-gadget.bin",
+          "offset": 131072
+        }
+      ]
+    }
+  ]
+}
