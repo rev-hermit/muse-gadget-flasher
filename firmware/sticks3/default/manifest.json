@@ -1,5 +1,5 @@
 {
-  "name": "Muse Gadget (M5StickS3)",
+  "name": "Muse Gadget (M5Stack StickS3)",
   "version": "999.0.0-default",
   "new_install_prompt_erase": true,
   "min_flash_bytes": 8265728,
@@ -25,5 +25,6 @@
         }
       ]
     }
-  ]
+  ],
+  "build": "RH0.01 - 20261102"
 }
