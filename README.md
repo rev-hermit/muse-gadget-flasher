@@ -16,8 +16,8 @@ A standalone Web flasher to flash and configure the Muse Gadget firmware on the 
 Works completely offline without external CDN dependencies.
 
 > **About the Firmware**  
-> The firmware included here is a custom build based on the official [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk), enhanced with **optimized Japanese typography (Noto Sans JP)**, **multi-Wi-Fi profile storage with on-device menu switching**, and **scrolling reply captions (no truncation)**.  
-> Current build: **RH0.01 - 20261102**
+> The firmware included here is a custom build based on the official [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk), enhanced with **optimized Japanese typography (Noto Sans JP)**, **multi-Wi-Fi profile storage with on-device menu switching**, a **text-first screen without the avatar** (replies scroll instead of being cut), and **support for environment-dependent characters such as ①②③**.  
+> Current build: **RH0.02 - 20261102**
 
 ### How to Use
 
@@ -50,8 +50,8 @@ M5StickS3 に Muse Gadget ファームウェアを書き込み、初期設定（
 外部 CDN やインターネット接続への依存がなく、ローカル環境でも動作します。
 
 > **ファームウェアについて**  
-> 本ツールで書き込まれるファームウェアは、公式の [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk) をベースに、**日本語フォント（Noto Sans JP）の最適化**、**Wi-Fi 複数登録・本体メニュー切替機能**、**返答テキストのスクロール表示（省略なし）** を追加した M5StickS3 向けのカスタムビルドです。  
-> 現在のビルド: **RH0.01 - 20261102**
+> 本ツールで書き込まれるファームウェアは、公式の [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk) をベースに、**日本語フォント（Noto Sans JP）の最適化**、**Wi-Fi 複数登録・本体メニュー切替機能**、**アバターを廃したテキスト主体の画面**（返答は省略せず自動スクロール）、**①②③ などの環境依存文字への対応** を追加した M5StickS3 向けのカスタムビルドです。  
+> 現在のビルド: **RH0.02 - 20261102**
 
 ### 使い方
 

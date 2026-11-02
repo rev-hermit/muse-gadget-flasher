@@ -37,7 +37,7 @@
   <section class="card">
     <h2 data-i18n="sec2_title">2. ファームウェアの書き込み</h2>
     <p class="note" data-i18n-html="sec2_note">
-      本フラッシャーで書き込むファームウェアは、公式の <a href="https://github.com/facebookincubator/muse-gadget-sdk" target="_blank" rel="noopener">muse-gadget-sdk</a> をベースに、<b>日本語フォント（Noto Sans JP）の最適化</b>、<b>Wi-Fi 複数登録・本体メニュー切替機能</b>、<b>返答テキストのスクロール表示（省略なし）</b> を追加した M5StickS3 向けのカスタムビルドです。現在のビルド: <b>RH0.01 - 20261102</b>。
+      本フラッシャーで書き込むファームウェアは、公式の <a href="https://github.com/facebookincubator/muse-gadget-sdk" target="_blank" rel="noopener">muse-gadget-sdk</a> をベースに、<b>日本語フォント（Noto Sans JP）の最適化</b>、<b>Wi-Fi 複数登録・本体メニュー切替機能</b>、<b>アバターを廃したテキスト主体の画面</b>（返答は省略せず自動スクロール）、<b>①②③ などの環境依存文字への対応</b> を追加した M5StickS3 向けのカスタムビルドです。現在のビルド: <b>RH0.02 - 20261102</b>。
     </p>
     <div class="field">
       <label class="label" data-i18n="sec2_font_label">画面の日本語フォント</label>
@@ -228,7 +228,7 @@
       sec1_step2: "<b>First-time flashing:</b> <b>Long-press the side button</b> until the internal <b>green LED flashes</b> (Download Mode).",
       sec1_step3: "<b>Updating firmware:</b> If Muse is already running, no need to hold the button—connect directly.",
       sec2_title: "2. Flash Firmware",
-      sec2_note: "This firmware is a custom M5StickS3 build based on the official <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a>, featuring <b>optimized Japanese font (Noto Sans JP)</b>, <b>multi-Wi-Fi profile storage with on-device switching</b>, and <b>scrolling reply captions (no truncation)</b>. Current build: <b>RH0.01 - 20261102</b>.",
+      sec2_note: "This firmware is a custom M5StickS3 build based on the official <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a>, featuring <b>optimized Japanese font (Noto Sans JP)</b>, <b>multi-Wi-Fi profile storage with on-device switching</b>, a <b>text-first screen without the avatar</b> (replies scroll instead of being cut), and <b>support for environment-dependent characters such as ①②③</b>. Current build: <b>RH0.02 - 20261102</b>.",
       sec2_font_label: "Display Font",
       sec2_font_noto: "Noto Sans JP (Recommended, 16px antialiased, SIL OFL 1.1)",
       sec2_font_default: "Standard GNU Unifont (16px bitmap, full CJK, GPL-2.0)",
