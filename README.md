@@ -16,8 +16,12 @@ A standalone Web flasher to flash and configure the Muse Gadget firmware on the 
 Works completely offline without external CDN dependencies.
 
 > **About the Firmware**  
-> The firmware included here is a custom build based on the official [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk), enhanced with **optimized Japanese typography (Noto Sans JP)**, **multi-Wi-Fi profile storage with on-device menu switching**, a **text-first screen without the avatar** (replies scroll instead of being cut), and **support for environment-dependent characters such as ①②③**.  
-> Current build: **RH0.02 - 20261102**
+> The firmware included here is a custom build based on the official [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk), enhanced with **optimized Japanese typography (Noto Sans JP)**, **monochrome emoji (Noto Emoji)**, **multi-Wi-Fi profile storage with on-device menu switching**, a **text-first screen without the avatar** (replies scroll instead of being cut), and **support for environment-dependent characters such as ①②③**.  
+> Current build: **RH0.07 - 20261105**
+>
+> Emoji are drawn from Noto Emoji's monochrome 16 px face. Single code points render; ZWJ sequences, skin tones and flags are not shaped, so their base characters appear separately.
+>
+> Double-click the mic (front) button to fetch and show the latest Muse message from the chat history. A single short tap still asks you to hold longer to talk.
 
 ### How to Use
 
@@ -41,6 +45,8 @@ Works completely offline without external CDN dependencies.
    Enter your SDK token and 2.4 GHz Wi-Fi credentials, then click **"Send Token & Wi-Fi"**.  
    *Note: Passwords are not saved in browser storage. You will still need to select Wi-Fi in the Muse mobile app during initial pairing.*
 
+   To edit what the device already remembers, click **"Load from Device (Edit)"**. The SSIDs and passwords are read from the device's NVS into the table; edit them (or delete a row) and click **"Send Wi-Fi Only"** to sync. Rows you delete after loading are also removed from the device. Loaded passwords stay in memory and are not saved in browser storage.
+
 ---
 
 <a name="japanese"></a>
@@ -50,8 +56,12 @@ M5StickS3 に Muse Gadget ファームウェアを書き込み、初期設定（
 外部 CDN やインターネット接続への依存がなく、ローカル環境でも動作します。
 
 > **ファームウェアについて**  
-> 本ツールで書き込まれるファームウェアは、公式の [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk) をベースに、**日本語フォント（Noto Sans JP）の最適化**、**Wi-Fi 複数登録・本体メニュー切替機能**、**アバターを廃したテキスト主体の画面**（返答は省略せず自動スクロール）、**①②③ などの環境依存文字への対応** を追加した M5StickS3 向けのカスタムビルドです。  
-> 現在のビルド: **RH0.02 - 20261102**
+> 本ツールで書き込まれるファームウェアは、公式の [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk) をベースに、**日本語フォント（Noto Sans JP）の最適化**、**絵文字（Noto Emoji）のモノクロ表示**、**Wi-Fi 複数登録・本体メニュー切替機能**、**アバターを廃したテキスト主体の画面**（返答は省略せず自動スクロール）、**①②③ などの環境依存文字への対応** を追加した M5StickS3 向けのカスタムビルドです。  
+> 現在のビルド: **RH0.07 - 20261105**
+>
+> 絵文字は Noto Emoji のモノクロ 16px フォントで描画します。単一コードポイントの絵文字に対応し、ZWJ 連結・肌色・旗の合成には対応しません（構成する各文字が個別に表示されます）。
+>
+> マイク（前面）ボタンをダブルクリックすると、チャット履歴から最新の Muse メッセージを取得して表示します。短いシングルタップは従来どおり「長押ししてください」の案内になります。
 
 ### 使い方
 
@@ -77,6 +87,8 @@ M5StickS3 に Muse Gadget ファームウェアを書き込み、初期設定（
    SDK トークンおよび Wi-Fi ネットワーク（2.4 GHz 帯）を入力し、「トークンと Wi-Fi を送信」を実行します。
    ※ Wi-Fi パスワードはブラウザのストレージには保存されず、安全に送信されます。
    ※ ここで本体に複数 Wi-Fi を登録しておくと本体メニューからの切り替え等に便利ですが、**スマホ等の Muse アプリでペアリングを行う際にも、アプリ側で Wi-Fi の選択とパスワード入力が改めて必要**となります（Muse のセットアップ仕様です）。
+
+   本体に保存済みの設定を編集したい場合は、**「本体から読み込む（編集）」** を押します。本体 NVS から SSID とパスワードが一覧に読み込まれるので、編集または行の削除をして **「Wi-Fi のみ送信」** で同期できます。読み込み後に削除した行は本体からも削除されます。読み込んだパスワードはメモリ上にのみ保持され、ブラウザのストレージには保存されません。
 
 ---
 

@@ -60,6 +60,13 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 table.aps { width: 100%; border-collapse: collapse; margin: .25rem 0 .75rem; }
 table.aps th { text-align: left; font-size: .8rem; color: var(--muted); font-weight: 600; padding: 0 .25rem .25rem; }
 table.aps td { padding: .15rem .25rem; }
+table.versions { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.versions th { text-align: left; color: var(--muted); font-weight: 600; padding: .35rem .4rem; border-bottom: 1px solid var(--line); }
+table.versions td { padding: .45rem .4rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.versions tr:last-child td { border-bottom: 0; }
+table.versions td:first-child { white-space: nowrap; font-weight: 600; }
+table.versions td:nth-child(2) { white-space: nowrap; color: var(--muted); }
+table.aps tr.from-device input[type="text"] { box-shadow: inset 3px 0 0 var(--accent); }
 
 .row { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0; }
 .install-row { margin: .75rem 0 .5rem; }

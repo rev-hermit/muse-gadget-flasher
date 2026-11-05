@@ -7,7 +7,7 @@ Muse Gadget flasher — 第三者ライセンスと帰属 / Third-party notices
    muse-gadget-sdk — https://github.com/facebookincubator/muse-gadget-sdk
    Apache License 2.0 (LICENSES/Apache-2.0.txt)
    ビルド: ESP-IDF v6.0.1 (Apache-2.0), ターゲット esp32s3, 8MB パーティション
-   ※ 公式 SDK に日本語フォント（Noto Sans JP）の最適化および Wi-Fi 複数登録・切替機能を追加したカスタムビルドです。
+   ※ 公式 SDK に日本語フォント（Noto Sans JP）の最適化、絵文字（Noto Emoji）表示、Wi-Fi 複数登録・切替機能を追加したカスタムビルドです。
 
 2. 書き込み UI
    ESP Web Tools 10.4.0 — https://github.com/esphome/esp-web-tools
@@ -29,6 +29,10 @@ Muse Gadget flasher — 第三者ライセンスと帰属 / Third-party notices
       GPL-2.0-or-later（フォント埋め込み例外つき、LICENSES/GPL-2.0.txt）。
       ビットマップデータは muse-gadget-sdk が配布しているものをそのまま使用。
       このビルドを再配布する場合はフォント例外の適用関係をご確認ください。
+   c) 絵文字フォールバック（noto / default 共通）: Noto Emoji 16px モノクロビットマップ
+      Noto Emoji — https://github.com/googlefonts/noto-emoji
+      SIL Open Font License 1.1 (LICENSES/OFL-1.1.txt)
+      単一コードポイントの絵文字のみを収録。ZWJ 連結・肌色・旗の合成には対応しません。
 
 5. 既定アバター（Jollybot）
    muse-gadget-sdk の avatar/ は Apache-2.0 の対象外（Meta の著作権表示のみ）。
@@ -37,7 +41,7 @@ Muse Gadget flasher — 第三者ライセンスと帰属 / Third-party notices
 公開時の確認事項
 ----------------
 - "noto" ビルドの再配布: 本 NOTICE と LICENSES/OFL-1.1.txt の同梱で足ります（通常はこちらの公開を推奨します）。
-- "default" ビルド（Unifont）の再配布: GPL-2.0 およびフォント例外に関する法的確認を推奨します。迷う場合は "noto" のみ公開してください。
+- "default" ビルド（Unifont + Noto Emoji）の再配布: GPL-2.0 およびフォント例外に関する法的確認を推奨します。Noto Emoji の OFL-1.1（LICENSES/OFL-1.1.txt）も同梱してください。迷う場合は "noto" のみ公開してください。
 - SDK トークンおよび Wi-Fi パスワードはファームウェアバイナリに埋め込まれません。利用者がページから入力し、USB 経由で本体の NVS に直接安全に保存されます。
 
 免責事項 / Disclaimer

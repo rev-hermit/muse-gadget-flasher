@@ -107,12 +107,14 @@ async function talk(port, tag, command, { done, timeoutMs = 60000, retryMs = 300
     await port.close().catch(() => {});
   }
   if (!last) {
-    throw new Error(
+    const err = new Error(
       msg(
         "本体から応答がありません。Muse が起動していない（画面が暗い、またはダウンロードモードのまま）可能性があります。本体の側面ボタンを1回押して画面が点灯したら、もう一度実行してください。",
         "No response from device. Muse might not be running (screen off or in download mode). Press the side button once to boot, then retry."
       )
     );
+    err.code = "no_response";
+    throw err;
   }
   return answers;
 }
@@ -186,7 +188,7 @@ export async function joinWifi(port) {
   if (last === "failed join") {
     throw new Error(
       msg(
-        "保存された Wi-Fi に接続できませんでした。SSID・パスワード、2.4GHz 帯であることを確認してください。",
+        "保存された Wi-Fi に接続できませんでした。SSID・パスワード、および 2.4 GHz 帯であることを確認してください。",
         "Failed to connect to saved Wi-Fi. Check SSID, password, and ensure 2.4 GHz band."
       )
     );
@@ -250,6 +252,68 @@ export async function forgetWifi(port) {
   });
   if (answers[answers.length - 1] !== "forgotten") {
     throw new Error(msg("本体の Wi-Fi 設定消去に失敗しました。", "Failed to erase Wi-Fi settings from device."));
+  }
+}
+
+// The same list, but with the passwords, straight from the device's NVS.
+// Answers are one JSON object per network ("@wifi net {...}").
+export async function listWifiFull(port) {
+  const answers = await talk(port, "wifi", ">wifi.list", {
+    done: (a) => a === "none" || /^\d+ saved$/.test(a) || a.startsWith("error"),
+    timeoutMs: 6000,
+    retryMs: 3000,
+  });
+  if (answers.some((a) => a.startsWith("error"))) {
+    throw new Error(
+      msg(
+        "本体が保存済み Wi-Fi の一覧を返せませんでした。",
+        "The device could not return its saved Wi-Fi list."
+      )
+    );
+  }
+  const nets = [];
+  for (const a of answers) {
+    if (!a.startsWith("net ")) continue;
+    try {
+      const net = JSON.parse(a.slice(4));
+      if (net && typeof net.s === "string") {
+        nets.push({
+          ssid: net.s,
+          pass: typeof net.p === "string" ? net.p : "",
+          hidden: Boolean(net.h),
+        });
+      }
+    } catch {
+      // A truncated line means a lost answer; leave it out rather than guess.
+    }
+  }
+  return nets;
+}
+
+// Forgets one saved network by name. The SSID may contain spaces or commas.
+export async function removeWifi(port, ssid) {
+  const clean = typeof ssid === "string" ? ssid : "";
+  if (!clean || clean.length > 32 || /[\r\n\0]/.test(clean)) {
+    throw new Error(
+      msg(
+        "削除する SSID が無効です。",
+        "Invalid SSID to remove."
+      )
+    );
+  }
+  const answers = await talk(port, "wifi", `>wifi.remove=${clean}`, {
+    done: (a) => a.startsWith("removed") || a.startsWith("error"),
+    timeoutMs: 15000,
+    retryMs: 3000,
+  });
+  const last = answers[answers.length - 1];
+  if (!last.startsWith("removed")) {
+    throw new Error(
+      msg(
+        `本体から「${clean}」を削除できませんでした（${last}）。`,
+        `Could not remove "${clean}" from the device (${last}).`
+      )
+    );
   }
 }
 

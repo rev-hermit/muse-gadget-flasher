@@ -21,30 +21,41 @@
       <button type="button" id="lang-btn" class="button secondary lang-btn">English</button>
     </div>
   </header>
-  <p class="lede" data-i18n="lede">
-    M5StickS3 に Muse Gadget ファームウェアを書き込み、初期設定を行います。Chrome または Edge（デスクトップ版）で開いてください。
-  </p>
+  <p class="lede" data-i18n="lede">M5StickS3 に Muse Gadget ファームウェアを書き込み、初期設定を行います。Chrome または Edge（デスクトップ版）をご利用ください。</p>
+
+  <section class="card">
+    <h2 data-i18n="diff_title">公式イメージとの主な違い</h2>
+    <p class="note" data-i18n="diff_lede">公式の muse-gadget-sdk をベースに、M5StickS3 向けに以下の機能を追加・変更しています。</p>
+    <ul class="steps">
+      <li data-i18n-html="diff_1"><b>日本語表示</b>: 推奨の Noto Sans JP 16px を同梱し、JIS X 0208 および環境依存文字（①②③など）に対応。GNU Unifont 版も選択可能。</li>
+      <li data-i18n-html="diff_2"><b>テキスト主体の画面</b>: アバターを非表示にし、返答テキストを省略せず自動スクロールで表示。</li>
+      <li data-i18n-html="diff_3"><b>Wi-Fi 複数登録</b>: 最大8件を保存し、本体メニューから切り替え可能。Web フラッシャーから読み込み・編集・個別削除にも対応。</li>
+      <li data-i18n-html="diff_4"><b>絵文字表示</b>: Noto Emoji 16px モノクロに対応。単一コードポイントを表示（ZWJ 結合・肌色・国旗は非対応）。</li>
+      <li data-i18n-html="diff_5"><b>最新メッセージ表示</b>: マイク（前面）ボタンのダブルクリックで、最新の Muse メッセージを取得・表示。</li>
+      <li data-i18n-html="diff_6"><b>セキュリティ配慮</b>: Wi-Fi パスワードはブラウザに保存せず、SDK トークン保存はオプトイン。CSP とシリアル改行インジェクション対策を適用。</li>
+      <li data-i18n-html="diff_7"><b>書き込みと設定</b>: Web Serial でファームウェアを書き込み、SDK トークンと Wi-Fi 設定を USB 経由で本体に直接保存。</li>
+    </ul>
+    <p class="note" data-i18n-html="diff_can"><b>対応機能:</b> ファームウェア書き込み / SDK トークン設定 / Wi-Fi の登録・読込・編集・削除 / 接続テスト / 本体メニューでの Wi-Fi 切替 / 最新メッセージ表示 / 絵文字表示</p>
+  </section>
 
   <section class="card">
     <h2 data-i18n="sec1_title">1. 接続と準備</h2>
     <ol class="steps">
-      <li data-i18n-html="sec1_step1">USB <b>データ対応</b>ケーブルで M5StickS3 を PC に接続します。</li>
-      <li data-i18n-html="sec1_step2"><b>初回書き込み時:</b> 本体の<b>側面ボタンを長押し</b>し、内部の<b>緑色 LED が点滅</b>したらダウンロードモードに入っています。</li>
-      <li data-i18n-html="sec1_step3"><b>ファームウェア更新時:</b> すでに Muse が動作している場合は、長押しせずそのまま接続してください。</li>
+      <li data-i18n-html="sec1_step1">USB <b>データ通信対応</b>ケーブルで M5StickS3 を PC に接続します。</li>
+      <li data-i18n-html="sec1_step2"><b>初回書き込み時:</b> 本体の<b>側面ボタンを長押し</b>し、内部の<b>緑色 LED が点滅</b>したら準備完了（ダウンロードモード）です。</li>
+      <li data-i18n-html="sec1_step3"><b>ファームウェア更新時:</b> すでに Muse が動作している場合は、ボタンを押さずにそのまま接続してください。</li>
     </ol>
   </section>
 
   <section class="card">
     <h2 data-i18n="sec2_title">2. ファームウェアの書き込み</h2>
-    <p class="note" data-i18n-html="sec2_note">
-      本フラッシャーで書き込むファームウェアは、公式の <a href="https://github.com/facebookincubator/muse-gadget-sdk" target="_blank" rel="noopener">muse-gadget-sdk</a> をベースに、<b>日本語フォント（Noto Sans JP）の最適化</b>、<b>Wi-Fi 複数登録・本体メニュー切替機能</b>、<b>アバターを廃したテキスト主体の画面</b>（返答は省略せず自動スクロール）、<b>①②③ などの環境依存文字への対応</b> を追加した M5StickS3 向けのカスタムビルドです。現在のビルド: <b>RH0.02 - 20261102</b>。
-    </p>
+    <p class="note" data-i18n-html="sec2_note">本ツールで書き込むファームウェアは、公式の <a href="https://github.com/facebookincubator/muse-gadget-sdk" target="_blank" rel="noopener">muse-gadget-sdk</a> をベースに、<b>日本語フォント（Noto Sans JP）の最適化</b>、<b>絵文字（Noto Emoji）のモノクロ表示</b>、<b>マイクボタンのダブルクリックで最新の Muse メッセージを表示</b>、<b>Wi-Fi 複数登録・本体メニュー切替機能</b>、<b>アバターを非表示にしたテキスト主体の画面</b>（返答は省略せず自動スクロール）、<b>①②③ などの環境依存文字への対応</b> を追加した M5StickS3 向けのカスタムビルドです。現在のビルド: <b>RH0.07 - 20261105</b>。</p>
     <div class="field">
-      <label class="label" data-i18n="sec2_font_label">画面の日本語フォント</label>
+      <label class="label" data-i18n="sec2_font_label">画面のフォント</label>
       <label class="radio"><input type="radio" name="font" value="noto" checked>
         <span data-i18n="sec2_font_noto">Noto Sans JP（推奨・16px アンチエイリアス・SIL OFL 1.1）</span></label>
       <label class="radio"><input type="radio" name="font" value="default">
-        <span data-i18n="sec2_font_default">標準 GNU Unifont（16px ドットフォント・全 CJK 収録・GPL-2.0）</span></label>
+        <span data-i18n="sec2_font_default">標準 GNU Unifont（16px ビットマップ・全 CJK 収録・GPL-2.0）</span></label>
     </div>
     <p class="meta" id="fw-meta"></p>
     <div class="install-row">
@@ -54,16 +65,13 @@
         <span slot="not-allowed" data-i18n="sec2_not_allowed">Web Serial は HTTPS または localhost 環境でのみ動作します。</span>
       </esp-web-install-button>
     </div>
-    <p class="note" data-i18n-html="sec2_note2">書き込み中はブラウザのタブを最前面にしてください。完了後、画面が暗いままなら<b>側面ボタンを1回</b>押して起動してください。</p>
+    <p class="note" data-i18n-html="sec2_note2">書き込み中はブラウザのタブを最前面のままにしてください。完了後、画面が暗い場合は<b>側面ボタンを1回</b>押して起動してください。</p>
     <p class="status" id="install-status"></p>
   </section>
 
   <section class="card">
     <h2 data-i18n="sec3_title">3. SDK トークン</h2>
-    <p class="note" data-i18n-html="sec3_note">
-      Muse とペアリングするためのトークンです。<a href="https://gadgets.muse.ai/settings/sdk-tokens" target="_blank" rel="noopener">gadgets.muse.ai</a>
-      で取得できます。ファームウェア書き込み後、USB 経由で本体の NVS（不揮発性メモリ）へ安全に転送されます。
-    </p>
+    <p class="note" data-i18n-html="sec3_note">Muse とペアリングするためのトークンです。<a href="https://gadgets.muse.ai/settings/sdk-tokens" target="_blank" rel="noopener">gadgets.muse.ai</a> で取得できます。ファームウェア書き込み後、USB 経由で本体の不揮発性メモリ（NVS）へ安全に転送されます。</p>
     <input id="token" type="password" placeholder="mgst_..." autocomplete="off" spellcheck="false">
     <div>
       <label class="checkbox-label">
@@ -76,12 +84,8 @@
 
   <section class="card">
     <h2 data-i18n="sec4_title">4. Wi-Fi 設定（最大 8 件）</h2>
-    <p class="note" data-i18n="sec4_note">
-      本体に登録する Wi-Fi ネットワーク（2.4 GHz 帯のみ）を入力してください。複数（最大 8 件）登録しておくことで、本体メニューからの切り替えや複数環境での自動接続が可能になります。※ パスワードはブラウザのストレージには保存されず、メモリ上でのみ安全に送信されます。SSID にカンマは使用できません。
-    </p>
-    <p class="warn" data-i18n-html="sec4_warn">
-      <b>【ご注意】</b> このフラッシャーで本体に Wi-Fi を登録した場合でも、<b>Muse アプリで初回ペアリングを行う際には、アプリ側でも Wi-Fi の選択とパスワード入力が改めて必要</b>になります（Muse の初期セットアップ仕様です）。
-    </p>
+    <p class="note" data-i18n="sec4_note">本体に登録する Wi-Fi ネットワーク（2.4 GHz 帯のみ）を入力してください。複数（最大 8 件）登録でき、本体メニューからの切り替えや複数環境での自動接続が可能です。※ パスワードはブラウザのストレージに保存されず、メモリ上でのみ送信されます。SSID にカンマは使用できません。</p>
+    <p class="warn" data-i18n-html="sec4_warn"><b>【ご注意】</b> このフラッシャーで本体に Wi-Fi を登録した場合でも、<b>Muse アプリでの初回ペアリング時には、アプリ側でも Wi-Fi 選択とパスワード入力が改めて必要</b>になります（Muse の初期セットアップ仕様です）。</p>
     <table class="aps">
       <thead><tr><th data-i18n="sec4_th_ssid">SSID</th><th data-i18n="sec4_th_pass">パスワード</th><th></th></tr></thead>
       <tbody id="ap-rows"></tbody>
@@ -91,31 +95,51 @@
       <button id="ap-scan" class="button secondary" data-i18n="sec4_btn_scan">周辺の Wi-Fi をスキャン（要本体接続）</button>
     </div>
     <div id="scan-box" class="scan" hidden>
-      <p class="note" data-i18n="sec4_scan_note">見つかった AP をクリックすると SSID 欄に入力されます（パスワードは別途入力してください）。</p>
+      <p class="note" data-i18n="sec4_scan_note">検出されたネットワークをクリックすると SSID 欄に入力されます（パスワードは手動で入力してください）。</p>
       <ul id="scan-list"></ul>
     </div>
   </section>
 
   <section class="card">
     <h2 data-i18n="sec5_title">5. 本体へ設定を送信</h2>
-    <p class="note" data-i18n="sec5_note">入力した SDK トークンおよび Wi-Fi 設定を本体に書き込みます。既存のペアリング情報は保持されます。</p>
+    <p class="note" data-i18n="sec5_note">入力した SDK トークンおよび Wi-Fi 設定を本体に保存します。既存のペアリング情報は保持されます。</p>
     <div class="row">
       <button id="send-all" class="button" data-i18n="sec5_btn_all">トークンと Wi-Fi を送信</button>
       <button id="send-wifi" class="button secondary" data-i18n="sec5_btn_wifi">Wi-Fi のみ送信</button>
-      <button id="show-saved" class="button secondary" data-i18n="sec5_btn_saved">保存済みの Wi-Fi を確認</button>
+      <button id="show-saved" class="button secondary" data-i18n="sec5_btn_saved">本体から読み込む（編集）</button>
       <button id="forget-all" class="button danger" data-i18n="sec5_btn_forget">保存済みの Wi-Fi を全消去</button>
     </div>
+    <p class="note" data-i18n="sec5_load_note">「本体から読み込む」で、本体に保存されている SSID とパスワードを一覧に読み込めます。読み込んだパスワードはブラウザのストレージには保存されません。読み込み後に削除した行は「Wi-Fi のみ送信」で本体からも削除されます。</p>
     <p class="status" id="send-status"></p>
   </section>
 
   <details class="card">
+    <summary data-i18n="history_summary">バージョン履歴</summary>
+    <p class="note" data-i18n="history_note">公開ビルドの履歴です。各ビルドは累積で、最新は RH0.07 です。</p>
+    <table class="versions">
+      <thead>
+        <tr><th data-i18n="history_build">ビルド</th><th data-i18n="history_date">日付</th><th data-i18n="history_changes">主な変更</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>RH0.07</td><td>2026-11-05</td><td data-i18n="hist_007">上部ステータスの Wi-Fi アイコンを画面中央に固定。電池残量表示の変化で位置が動かないよう改善。</td></tr>
+        <tr><td>RH0.06</td><td>2026-11-05</td><td data-i18n="hist_006">マイクボタンのダブルクリックで最新の Muse メッセージを取得・表示する機能を追加。</td></tr>
+        <tr><td>RH0.05</td><td>2026-11-05</td><td data-i18n="hist_005">Noto Emoji 16px モノクロによる絵文字表示に対応（単一コードポイント、ZWJ・肌色・国旗は非対応）。</td></tr>
+        <tr><td>RH0.04</td><td>2026-11-05</td><td data-i18n="hist_004">Web フラッシャーから本体に保存されている Wi-Fi 一覧の読み込み・編集・個別削除に対応。</td></tr>
+        <tr><td>RH0.03</td><td>2026-11-05</td><td data-i18n="hist_003">メニューアイコンを右下から側面ボタン横へ移動。返答テキストはアイコン側のみ幅を調整。</td></tr>
+        <tr><td>RH0.02</td><td>2026-11-02</td><td data-i18n="hist_002">セキュリティと安定性の向上。Wi-Fi パスワードのブラウザ保存撤廃、SDK トークン保存のオプトイン化、CSP 導入、シリアル改行対策、日英言語切替・免責事項を追加。</td></tr>
+        <tr><td>RH0.01</td><td>2026-11-02</td><td data-i18n="hist_001">初回公開。Noto Sans JP 最適化、Wi-Fi 複数登録・本体メニュー切替、テキスト主体画面、①②③ 対応。</td></tr>
+      </tbody>
+    </table>
+  </details>
+
+  <details class="card">
     <summary data-i18n="faq_summary">困ったとき（FAQ）</summary>
     <ul class="steps">
-      <li data-i18n-html="faq_1"><b>ポート一覧にデバイスが出ない</b>: 充電専用ケーブルではなくデータ通信対応ケーブルか確認してください。初回は側面ボタン長押しで緑 LED が点滅しているか確認してください。</li>
-      <li data-i18n-html="faq_2"><b>書き込みが失敗する</b>: 一度 USB ケーブルを抜き、側面ボタン長押し → 緑 LED 点滅を確認してから再度接続してお試しください。</li>
-      <li data-i18n-html="faq_3"><b>書き込み後に画面が暗いまま</b>: 側面ボタンを1回押すと電源が入りリセット起動します。</li>
+      <li data-i18n-html="faq_1"><b>ポート一覧にデバイスが表示されない</b>: 充電専用ケーブルではなく、データ通信対応ケーブルであることを確認してください。初回書き込み時は、側面ボタン長押しで内部の緑色 LED が点滅していることを確認してください。</li>
+      <li data-i18n-html="faq_2"><b>書き込みが失敗する</b>: 一度 USB ケーブルを抜き、側面ボタン長押しで緑色 LED 点滅を確認してから再度接続してお試しください。</li>
+      <li data-i18n-html="faq_3"><b>書き込み後に画面が暗いまま</b>: 側面ボタンを1回押して起動（リセット）してください。</li>
       <li data-i18n-html="faq_4"><b>Wi-Fi に接続できない</b>: 2.4 GHz 帯（5 GHz 帯は非対応）およびパスワードを確認してください。本体の側面メニュー → Wi-Fi からも接続先を切り替えられます。</li>
-      <li data-i18n-html="faq_5"><b>M5Stack の元ファームに戻したい</b>: M5Burner ツールから <code>STICKS3</code> を選択して書き戻すことができます。</li>
+      <li data-i18n-html="faq_5"><b>工場出荷時のファームウェアに戻したい</b>: M5Burner ツールから <code>STICKS3</code> を選択して書き戻すことができます。</li>
     </ul>
   </details>
 
@@ -129,106 +153,137 @@
   </details>
 
   <footer>
-    <p class="note" data-i18n-html="footer_text">
-      ファームウェア: <a href="https://github.com/facebookincubator/muse-gadget-sdk" target="_blank" rel="noopener">muse-gadget-sdk</a>（Apache-2.0）。
-      フォント: Noto Sans JP（SIL Open Font License 1.1）／ GNU Unifont（GPL-2.0 フォント例外付き）。
-      描画エンジン: LVGL（MIT）。書き込みツール: ESP Web Tools 10.4.0（Apache-2.0）。
-      詳細は <a href="NOTICE">NOTICE</a> および <a href="LICENSES/">LICENSES/</a> をご確認ください。
-    </p>
+    <p class="note" data-i18n-html="footer_text">ファームウェア: <a href="https://github.com/facebookincubator/muse-gadget-sdk" target="_blank" rel="noopener">muse-gadget-sdk</a>（Apache-2.0）。フォント: Noto Sans JP（SIL Open Font License 1.1）／ Noto Emoji（SIL OFL 1.1）／ GNU Unifont（GPL-2.0 フォント例外付き）。描画エンジン: LVGL（MIT）。書き込みツール: ESP Web Tools 10.4.0（Apache-2.0）。詳細は <a href="NOTICE">NOTICE</a> および <a href="LICENSES/">LICENSES/</a> をご確認ください。</p>
     <p class="note" data-i18n="footer_disclaimer">本ツールは非公式のコミュニティツールであり、Meta、Muse、M5Stack との直接の提携関係はありません。</p>
   </footer>
 </main>
 <script type="module">
-  import { addWifi, forgetWifi, isPassphrase, isSsid, isToken, joinWifi, listWifi, openPicker, scanWifi, sendToken, setLanguage, STICKS3 } from "./app.js";
+  import { addWifi, forgetWifi, isPassphrase, isSsid, isToken, joinWifi, listWifi, listWifiFull, openPicker, removeWifi, scanWifi, sendToken, setLanguage, STICKS3 } from "./app.js";
 
   const I18N = {
     ja: {
       page_title: "Muse Gadget フラッシャー (M5StickS3)",
       lang_switch: "English",
       h1: "Muse Gadget フラッシャー",
-      lede: "M5StickS3 に Muse Gadget ファームウェアを書き込み、初期設定を行います。Chrome または Edge（デスクトップ版）で開いてください。",
+      lede: "M5StickS3 に Muse Gadget ファームウェアを書き込み、初期設定を行います。Chrome または Edge（デスクトップ版）をご利用ください。",
+      diff_title: "公式イメージとの主な違い",
+      diff_lede: "公式の muse-gadget-sdk をベースに、M5StickS3 向けに以下の機能を追加・変更しています。",
+      diff_1: "<b>日本語表示</b>: 推奨の Noto Sans JP 16px を同梱し、JIS X 0208 および環境依存文字（①②③など）に対応。GNU Unifont 版も選択可能。",
+      diff_2: "<b>テキスト主体の画面</b>: アバターを非表示にし、返答テキストを省略せず自動スクロールで表示。",
+      diff_3: "<b>Wi-Fi 複数登録</b>: 最大8件を保存し、本体メニューから切り替え可能。Web フラッシャーから読み込み・編集・個別削除にも対応。",
+      diff_4: "<b>絵文字表示</b>: Noto Emoji 16px モノクロに対応。単一コードポイントを表示（ZWJ 結合・肌色・国旗は非対応）。",
+      diff_5: "<b>最新メッセージ表示</b>: マイク（前面）ボタンのダブルクリックで、最新の Muse メッセージを取得・表示。",
+      diff_6: "<b>セキュリティ配慮</b>: Wi-Fi パスワードはブラウザに保存せず、SDK トークン保存はオプトイン。CSP とシリアル改行インジェクション対策を適用。",
+      diff_7: "<b>書き込みと設定</b>: Web Serial でファームウェアを書き込み、SDK トークンと Wi-Fi 設定を USB 経由で本体に直接保存。",
+      diff_can: "<b>対応機能:</b> ファームウェア書き込み / SDK トークン設定 / Wi-Fi の登録・読込・編集・削除 / 接続テスト / 本体メニューでの Wi-Fi 切替 / 最新メッセージ表示 / 絵文字表示",
       sec1_title: "1. 接続と準備",
-      sec1_step1: "USB <b>データ対応</b>ケーブルで M5StickS3 を PC に接続します。",
-      sec1_step2: "<b>初回書き込み時:</b> 本体の<b>側面ボタンを長押し</b>し、内部の<b>緑色 LED が点滅</b>したらダウンロードモードに入っています。",
-      sec1_step3: "<b>ファームウェア更新時:</b> すでに Muse が動作している場合は、長押しせずそのまま接続してください。",
+      sec1_step1: "USB <b>データ通信対応</b>ケーブルで M5StickS3 を PC に接続します。",
+      sec1_step2: "<b>初回書き込み時:</b> 本体の<b>側面ボタンを長押し</b>し、内部の<b>緑色 LED が点滅</b>したら準備完了（ダウンロードモード）です。",
+      sec1_step3: "<b>ファームウェア更新時:</b> すでに Muse が動作している場合は、ボタンを押さずにそのまま接続してください。",
       sec2_title: "2. ファームウェアの書き込み",
-      sec2_note: "本フラッシャーで書き込むファームウェアは、公式の <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a> をベースに、<b>日本語フォント（Noto Sans JP）の最適化</b> および <b>Wi-Fi 複数登録・本体メニュー切替機能</b> を追加した M5StickS3 向けのカスタムビルドです。",
+      sec2_note: "本ツールで書き込むファームウェアは、公式の <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a> をベースに、<b>日本語フォント（Noto Sans JP）の最適化</b>、<b>絵文字（Noto Emoji）のモノクロ表示</b>、<b>マイクボタンのダブルクリックで最新の Muse メッセージを表示</b>、<b>Wi-Fi 複数登録・本体メニュー切替機能</b>、<b>アバターを非表示にしたテキスト主体の画面</b>（返答は省略せず自動スクロール）、<b>①②③ などの環境依存文字への対応</b> を追加した M5StickS3 向けのカスタムビルドです。現在のビルド: <b>RH0.07 - 20261105</b>。",
       sec2_font_label: "画面のフォント",
       sec2_font_noto: "Noto Sans JP（推奨・16px アンチエイリアス・SIL OFL 1.1）",
-      sec2_font_default: "標準 GNU Unifont（16px ドットフォント・全 CJK 収録・GPL-2.0）",
+      sec2_font_default: "標準 GNU Unifont（16px ビットマップ・全 CJK 収録・GPL-2.0）",
       sec2_btn_install: "ファームウェアを書き込む",
       sec2_unsupported: "このブラウザは Web Serial に対応していません。Chrome または Edge（デスクトップ版）をご利用ください。",
       sec2_not_allowed: "Web Serial は HTTPS または localhost 環境でのみ動作します。",
-      sec2_note2: "書き込み中はブラウザのタブを最前面にしてください。完了後、画面が暗いままなら<b>側面ボタンを1回</b>押して起動してください。",
+      sec2_note2: "書き込み中はブラウザのタブを最前面のままにしてください。完了後、画面が暗い場合は<b>側面ボタンを1回</b>押して起動してください。",
       sec3_title: "3. SDK トークン",
-      sec3_note: "Muse とペアリングするためのトークンです。<a href=\"https://gadgets.muse.ai/settings/sdk-tokens\" target=\"_blank\" rel=\"noopener\">gadgets.muse.ai</a> で取得できます。ファームウェア書き込み後、USB 経由で本体の NVS（不揮発性メモリ）へ安全に転送されます。",
+      sec3_note: "Muse とペアリングするためのトークンです。<a href=\"https://gadgets.muse.ai/settings/sdk-tokens\" target=\"_blank\" rel=\"noopener\">gadgets.muse.ai</a> で取得できます。ファームウェア書き込み後、USB 経由で本体の不揮発性メモリ（NVS）へ安全に転送されます。",
       sec3_save_token: "このブラウザにトークンを記憶する（共有 PC ではオフを推奨）",
       sec4_title: "4. Wi-Fi 設定（最大 8 件）",
-      sec4_note: "本体に登録する Wi-Fi ネットワーク（2.4 GHz 帯のみ）を入力してください。複数（最大 8 件）登録しておくことで、本体メニューからの切り替えや複数環境での自動接続が可能になります。※ パスワードはブラウザのストレージには保存されず、メモリ上でのみ安全に送信されます。SSID にカンマは使用できません。",
-      sec4_warn: "<b>【ご注意】</b> このフラッシャーで本体に Wi-Fi を登録した場合でも、<b>Muse アプリで初回ペアリングを行う際には、アプリ側でも Wi-Fi の選択とパスワード入力が改めて必要</b>になります（Muse の初期セットアップ仕様です）。",
+      sec4_note: "本体に登録する Wi-Fi ネットワーク（2.4 GHz 帯のみ）を入力してください。複数（最大 8 件）登録でき、本体メニューからの切り替えや複数環境での自動接続が可能です。※ パスワードはブラウザのストレージに保存されず、メモリ上でのみ送信されます。SSID にカンマは使用できません。",
+      sec4_warn: "<b>【ご注意】</b> このフラッシャーで本体に Wi-Fi を登録した場合でも、<b>Muse アプリでの初回ペアリング時には、アプリ側でも Wi-Fi 選択とパスワード入力が改めて必要</b>になります（Muse の初期セットアップ仕様です）。",
       sec4_th_ssid: "SSID",
       sec4_th_pass: "パスワード",
       sec4_btn_add: "行を追加",
       sec4_btn_scan: "周辺の Wi-Fi をスキャン（要本体接続）",
-      sec4_scan_note: "見つかった AP をクリックすると SSID 欄に入力されます（パスワードは別途入力してください）。",
+      sec4_scan_note: "検出されたネットワークをクリックすると SSID 欄に入力されます（パスワードは手動で入力してください）。",
       sec4_empty: "登録されていません。「行を追加」または「周辺の Wi-Fi をスキャン」から追加してください。",
       sec4_del: "削除",
       sec5_title: "5. 本体へ設定を送信",
-      sec5_note: "入力した SDK トークンおよび Wi-Fi 設定を本体に書き込みます。既存のペアリング情報は保持されます。",
+      sec5_note: "入力した SDK トークンおよび Wi-Fi 設定を本体に保存します。既存のペアリング情報は保持されます。",
       sec5_btn_all: "トークンと Wi-Fi を送信",
       sec5_btn_wifi: "Wi-Fi のみ送信",
-      sec5_btn_saved: "保存済みの Wi-Fi を確認",
+      sec5_btn_saved: "本体から読み込む（編集）",
       sec5_btn_forget: "保存済みの Wi-Fi を全消去",
+      sec5_load_note: "「本体から読み込む」で、本体に保存されている SSID とパスワードを一覧に読み込めます。読み込んだパスワードはブラウザのストレージには保存されません。読み込み後に削除した行は「Wi-Fi のみ送信」で本体からも削除されます。",
+      history_summary: "バージョン履歴",
+      history_note: "公開ビルドの履歴です。各ビルドは累積で、最新は RH0.07 です。",
+      history_build: "ビルド",
+      history_date: "日付",
+      history_changes: "主な変更",
+      hist_001: "初回公開。Noto Sans JP 最適化、Wi-Fi 複数登録・本体メニュー切替、テキスト主体画面、①②③ 対応。",
+      hist_002: "セキュリティと安定性の向上。Wi-Fi パスワードのブラウザ保存撤廃、SDK トークン保存のオプトイン化、CSP 導入、シリアル改行対策、日英言語切替・免責事項を追加。",
+      hist_003: "メニューアイコンを右下から側面ボタン横へ移動。返答テキストはアイコン側のみ幅を調整。",
+      hist_004: "Web フラッシャーから本体に保存されている Wi-Fi 一覧の読み込み・編集・個別削除に対応。",
+      hist_005: "Noto Emoji 16px モノクロによる絵文字表示に対応（単一コードポイント、ZWJ・肌色・国旗は非対応）。",
+      hist_006: "マイクボタンのダブルクリックで最新の Muse メッセージを取得・表示する機能を追加。",
+      hist_007: "上部ステータスの Wi-Fi アイコンを画面中央に固定。電池残量表示の変化で位置が動かないよう改善。",
       faq_summary: "困ったとき（FAQ）",
-      faq_1: "<b>ポート一覧にデバイスが出ない</b>: 充電専用ケーブルではなくデータ通信対応ケーブルか確認してください。初回は側面ボタン長押しで緑 LED が点滅しているか確認してください。",
-      faq_2: "<b>書き込みが失敗する</b>: 一度 USB ケーブルを抜き、側面ボタン長押し → 緑 LED 点滅を確認してから再度接続してお試しください。",
-      faq_3: "<b>書き込み後に画面が暗いまま</b>: 側面ボタンを1回押すと電源が入りリセット起動します。",
+      faq_1: "<b>ポート一覧にデバイスが表示されない</b>: 充電専用ケーブルではなく、データ通信対応ケーブルであることを確認してください。初回書き込み時は、側面ボタン長押しで内部の緑色 LED が点滅していることを確認してください。",
+      faq_2: "<b>書き込みが失敗する</b>: 一度 USB ケーブルを抜き、側面ボタン長押しで緑色 LED 点滅を確認してから再度接続してお試しください。",
+      faq_3: "<b>書き込み後に画面が暗いまま</b>: 側面ボタンを1回押して起動（リセット）してください。",
       faq_4: "<b>Wi-Fi に接続できない</b>: 2.4 GHz 帯（5 GHz 帯は非対応）およびパスワードを確認してください。本体の側面メニュー → Wi-Fi からも接続先を切り替えられます。",
-      faq_5: "<b>M5Stack の元ファームに戻したい</b>: M5Burner ツールから <code>STICKS3</code> を選択して書き戻すことができます。",
+      faq_5: "<b>工場出荷時のファームウェアに戻したい</b>: M5Burner ツールから <code>STICKS3</code> を選択して書き戻すことができます。",
       disclaimer_summary: "免責事項（必ずお読みください）",
       disclaimer_1: "<b>非公式・無保証（AS-IS）:</b> 本ツールおよび同梱のファームウェアは、有志によるオープンソースのカスタムプロジェクトであり、現状有姿（AS-IS）で提供されます。明示・黙示を問わず、その完全性、安全性、特定目的への適合性について一切の保証はありません。",
       disclaimer_2: "<b>公式サポートなし:</b> Meta 公式の Muse Gadget SDK 自体も実験的なオープンソースプロジェクトであり、ESP32 マイコン等での動作に関して Meta による公式の動作保証やサポートは提供されていません。また、本ツールは Meta、Muse、M5Stack の公式プロジェクトではなく、いかなる公式サポートも受けられません。",
       disclaimer_3: "<b>自己責任の原則:</b> ファームウェアの書き込み、設定変更、デバイスの利用はすべて利用者の自己責任で行ってください。本ツールの使用または使用不能により生じたデバイスの故障・文鎮化、データ消失、発熱・バッテリートラブル、その他いかなる損害についても、製作者および関係者は一切の責任を負いません。",
-      footer_text: "ファームウェア: <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a>（Apache-2.0）。フォント: Noto Sans JP（SIL Open Font License 1.1）／ GNU Unifont（GPL-2.0 フォント例外付き）。描画エンジン: LVGL（MIT）。書き込みツール: ESP Web Tools 10.4.0（Apache-2.0）。詳細は <a href=\"NOTICE\">NOTICE</a> および <a href=\"LICENSES/\">LICENSES/</a> をご確認ください。",
+      footer_text: "ファームウェア: <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a>（Apache-2.0）。フォント: Noto Sans JP（SIL Open Font License 1.1）／ Noto Emoji（SIL OFL 1.1）／ GNU Unifont（GPL-2.0 フォント例外付き）。描画エンジン: LVGL（MIT）。書き込みツール: ESP Web Tools 10.4.0（Apache-2.0）。詳細は <a href=\"NOTICE\">NOTICE</a> および <a href=\"LICENSES/\">LICENSES/</a> をご確認ください。",
       footer_disclaimer: "本ツールは非公式のコミュニティツールであり、Meta、Muse、M5Stack との直接の提携関係はありません。",
 
       loading_manifest: "ファームウェア情報を読み込み中...",
-      err_manifest: "マニフェストを読み込めませんでした: ",
-      need_flash: "必要フラッシュ ",
-      max_aps: "本体に登録できるのは最大 8 件までです。",
-      scanning_wifi: "周辺の Wi-Fi を検索しています…（数秒かかります）",
-      rescanning_wifi: "見つかりませんでした。再検索しています…",
+      err_manifest: "ファームウェア情報の読み込みに失敗しました: ",
+      need_flash: "必要フラッシュ容量: ",
+      max_aps: "本体に登録できる Wi-Fi は最大 8 件です。",
+      scanning_wifi: "周辺の Wi-Fi をスキャンしています…（数秒かかります）",
+      rescanning_wifi: "見つかりませんでした。再スキャンしています…",
       added_scan: (ssid) => `「${ssid}」を一覧に追加しました。パスワードを入力してください。`,
-      no_aps: "周辺の AP が見つかりませんでした。",
-      aps_found: (n) => `${n} 件の AP が見つかりました。`,
-      req_token: "正しい SDK トークンを入力してください（例: mgst_...）。",
+      no_aps: "周辺に Wi-Fi ネットワークが見つかりませんでした。",
+      aps_found: (n) => `${n} 件の Wi-Fi ネットワークが見つかりました。`,
+      req_token: "正しい形式の SDK トークンを入力してください（例: mgst_...）。",
       sending_token: "SDK トークンを送信しています…（本体が再起動します）",
       no_wifi_to_send: "送信する Wi-Fi ネットワークが入力されていません。",
       invalid_ssid: (s) => `SSID「${s}」が無効です（1〜32文字、カンマ・改行不可）。`,
       invalid_pass: (s) => `SSID「${s}」のパスワードが無効です（64文字以内、改行不可）。`,
       reg_wifi: (s) => `Wi-Fi「${s}」を登録しています…`,
       testing_wifi: "登録したネットワークに接続テストを行っています…（最大45秒）",
-      settings_done: (ip) => `設定完了しました。${ip ? `（接続 IP: ${ip}）` : ""}`,
-      wifi_done: (ip) => ip ? `Wi-Fi に接続しました（IP: ${ip}）。ペアリングは維持されています。` : "Wi-Fi の送信が完了しました。",
-      checking_saved: "本体の設定を確認しています…",
-      saved_list: (n, list) => `本体に保存されている Wi-Fi（${n} 件）: ${list}`,
-      saved_none: "本体に Wi-Fi は登録されていません。",
+      settings_done: (ip) => `設定が完了しました。${ip ? `（接続 IP: ${ip}）` : ""}`,
+      wifi_done: (ip) => ip ? `Wi-Fi に接続しました（IP: ${ip}）。ペアリング情報は維持されています。` : "Wi-Fi 設定の送信が完了しました。",
+      checking_saved: "本体から保存済み Wi-Fi を読み込んでいます…",
+      saved_list: (n, list) => `本体に保存されている Wi-Fi（${n} 件・旧ファームウェアのためパスワード未取得）: ${list}。RH0.04 以降を書き込むとパスワードも含めて読み込み・編集できます。`,
+      saved_none: "本体に保存されている Wi-Fi はありません。",
+      confirm_replace: "入力欄の内容を、本体に保存されている Wi-Fi 一覧で置き換えます。よろしいですか？",
+      loaded_saved: (n) => `本体から ${n} 件の Wi-Fi を読み込みました。編集後に「Wi-Fi のみ送信」で本体へ反映できます（削除した行は本体からも削除されます）。`,
+      removing_wifi: (s) => `本体から「${s}」を削除しています…`,
       confirm_forget: "本体に保存されている Wi-Fi 設定をすべて消去します。よろしいですか？（Muse のペアリング情報は消去されません）",
       forgetting: "本体の保存済み Wi-Fi を消去しています…",
       forgot_done: "本体の Wi-Fi 設定をすべて消去しました。",
-      dialog_closed: "書き込みダイアログが閉じられました。書き込み完了後に画面が暗い場合は、本体側面ボタンを1回押して起動してから「5. 本体へ設定を送信」に進んでください。"
+      dialog_closed: "書き込みダイアログが閉じられました。画面が暗い場合は、本体側面ボタンを1回押して起動してから「5. 本体へ設定を送信」に進んでください。"
     },
     en: {
       page_title: "Muse Gadget Flasher (M5StickS3)",
       lang_switch: "日本語",
       h1: "Muse Gadget Flasher",
       lede: "Flash Muse Gadget firmware to M5StickS3 and configure initial settings. Open in desktop Chrome or Edge.",
+      diff_title: "Differences from Official Firmware",
+      diff_lede: "Based on the official muse-gadget-sdk, this build includes the following features for M5StickS3:",
+      diff_1: "<b>Japanese text</b>: Bundles recommended Noto Sans JP 16px, supporting JIS X 0208 and special characters like ①②③. GNU Unifont build is also available.",
+      diff_2: "<b>Text-focused screen</b>: Replaces the avatar with auto-scrolling full text replies without truncation.",
+      diff_3: "<b>Multiple Wi-Fi profiles</b>: Stores up to 8 networks with on-device menu switching. The web flasher can read, edit, and delete individual profiles.",
+      diff_4: "<b>Emoji</b>: Monochrome Noto Emoji 16px (single code points; ZWJ sequences, skin tones, and flags are not supported).",
+      diff_5: "<b>Latest message</b>: Double-click the mic (front) button to fetch and display the latest Muse message.",
+      diff_6: "<b>Security</b>: Wi-Fi passwords are never stored in browser storage, SDK token saving is opt-in, and CSP with serial injection guards are applied.",
+      diff_7: "<b>Flashing & Setup</b>: Flash firmware via Web Serial, then configure SDK token and Wi-Fi settings over USB directly to the device.",
+      diff_can: "<b>Features:</b> Firmware flashing / SDK token configuration / Wi-Fi management (add, read, edit, delete, test) / On-device Wi-Fi switching / Latest message display / Monochrome emoji",
       sec1_title: "1. Connection & Preparation",
       sec1_step1: "Connect M5StickS3 to your PC using a USB <b>data</b> cable.",
       sec1_step2: "<b>First-time flashing:</b> <b>Long-press the side button</b> until the internal <b>green LED flashes</b> (Download Mode).",
-      sec1_step3: "<b>Updating firmware:</b> If Muse is already running, no need to hold the button—connect directly.",
+      sec1_step3: "<b>Updating firmware:</b> If Muse is already running, connect directly without holding the button.",
       sec2_title: "2. Flash Firmware",
-      sec2_note: "This firmware is a custom M5StickS3 build based on the official <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a>, featuring <b>optimized Japanese font (Noto Sans JP)</b>, <b>multi-Wi-Fi profile storage with on-device switching</b>, a <b>text-first screen without the avatar</b> (replies scroll instead of being cut), and <b>support for environment-dependent characters such as ①②③</b>. Current build: <b>RH0.02 - 20261102</b>.",
+      sec2_note: "This firmware is a custom M5StickS3 build based on the official <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a>. It adds optimized Japanese fonts (Noto Sans JP), monochrome emoji, fetching latest messages via mic double-click, multi-Wi-Fi profile switching, and auto-scrolling full text replies. Current build: <b>RH0.07 - 20261105</b>.",
       sec2_font_label: "Display Font",
       sec2_font_noto: "Noto Sans JP (Recommended, 16px antialiased, SIL OFL 1.1)",
       sec2_font_default: "Standard GNU Unifont (16px bitmap, full CJK, GPL-2.0)",
@@ -237,61 +292,77 @@
       sec2_not_allowed: "Web Serial only works over HTTPS or on localhost.",
       sec2_note2: "Keep this tab in the foreground while flashing. If the screen remains dark after flashing, press the <b>side button once</b> to start.",
       sec3_title: "3. SDK Token",
-      sec3_note: "Token required to pair with Muse. Obtain it from <a href=\"https://gadgets.muse.ai/settings/sdk-tokens\" target=\"_blank\" rel=\"noopener\">gadgets.muse.ai</a>. Sent securely to device NVS via USB after flashing.",
-      sec3_save_token: "Remember token in this browser (uncheck on shared computers)",
+      sec3_note: "Required token to pair with Muse. Obtain it from <a href=\"https://gadgets.muse.ai/settings/sdk-tokens\" target=\"_blank\" rel=\"noopener\">gadgets.muse.ai</a>. Sent securely to device NVS via USB after flashing.",
+      sec3_save_token: "Remember token in this browser (not recommended on shared PCs)",
       sec4_title: "4. Wi-Fi Configuration (Up to 8)",
-      sec4_note: "Enter Wi-Fi networks (2.4 GHz band only) to register on the device. Storing multiple profiles (up to 8) allows automatic reconnection and switching via the on-device menu. * Passwords are not saved in browser storage and are sent securely in-memory only. Commas are not allowed in SSIDs.",
-      sec4_warn: "<b>[Important]</b> Even if Wi-Fi is registered via this flasher, <b>you must still select the Wi-Fi SSID and enter its password during initial pairing in the Muse mobile app</b> (standard Muse setup behavior).",
+      sec4_note: "Enter Wi-Fi networks (2.4 GHz band only) to register on the device. Storing multiple profiles (up to 8) allows automatic reconnection and on-device menu switching. * Passwords are never saved in browser storage and are sent in-memory only. Commas are not allowed in SSIDs.",
+      sec4_warn: "<b>[Important]</b> Even if Wi-Fi is registered via this flasher, <b>you must still select the Wi-Fi network and enter its password during initial pairing in the Muse mobile app</b> (standard Muse setup behavior).",
       sec4_th_ssid: "SSID",
       sec4_th_pass: "Password",
       sec4_btn_add: "Add Row",
       sec4_btn_scan: "Scan Nearby Wi-Fi (Device Required)",
-      sec4_scan_note: "Click a found AP to insert its SSID (enter password manually).",
-      sec4_empty: "No networks registered yet. Use \"Add Row\" or \"Scan Nearby Wi-Fi\".",
+      sec4_scan_note: "Click a detected network to insert its SSID (enter password manually).",
+      sec4_empty: "No networks added yet. Click \"Add Row\" or \"Scan Nearby Wi-Fi\".",
       sec4_del: "Delete",
       sec5_title: "5. Send Settings to Device",
-      sec5_note: "Writes SDK token and Wi-Fi profiles to device storage. Existing pairing data is preserved.",
+      sec5_note: "Sends SDK token and Wi-Fi settings to the device. Existing pairing data is preserved.",
       sec5_btn_all: "Send Token & Wi-Fi",
       sec5_btn_wifi: "Send Wi-Fi Only",
-      sec5_btn_saved: "Check Saved Wi-Fi",
+      sec5_btn_saved: "Load from Device (Edit)",
       sec5_btn_forget: "Erase All Saved Wi-Fi",
+      sec5_load_note: "\"Load from Device\" reads saved SSIDs and passwords from the device into the table. Loaded passwords are never saved in browser storage. Any rows deleted after loading are also removed from the device when clicking \"Send Wi-Fi Only\".",
+      history_summary: "Version History",
+      history_note: "History of public builds. Each build is cumulative; the latest is RH0.07.",
+      history_build: "Build",
+      history_date: "Date",
+      history_changes: "Changes",
+      hist_001: "First public release. Noto Sans JP optimization, multi-Wi-Fi profiles with on-device switching, text-first screen, and ①②③ support.",
+      hist_002: "Security and stability improvements: Removed browser storage for Wi-Fi passwords, opt-in SDK token storage, CSP, serial injection protection, and bilingual UI with disclaimers.",
+      hist_003: "Moved menu icon beside the side button. Replies adjust width to avoid overlapping the icon.",
+      hist_004: "Added ability to read, edit, and individually delete saved Wi-Fi profiles from the device.",
+      hist_005: "Added monochrome Noto Emoji 16px support (single code points; ZWJ, skin tones, and flags are not supported).",
+      hist_006: "Added feature to fetch and display the latest Muse message by double-clicking the mic button.",
+      hist_007: "Fixed top Wi-Fi icon position at screen center; no longer shifts when battery percentage changes.",
       faq_summary: "Troubleshooting (FAQ)",
-      faq_1: "<b>Port not listed</b>: Verify you are using a data-capable USB cable, not charge-only. For first-time flashing, ensure the green LED is flashing after long-pressing the side button.",
-      faq_2: "<b>Flashing fails</b>: Unplug the cable, long-press side button until green LED flashes, re-plug, and retry.",
-      faq_3: "<b>Screen remains dark after flashing</b>: Press the side button once to boot / reset.",
+      faq_1: "<b>Device not listed in ports</b>: Verify that you are using a data-capable USB cable, not a charge-only cable. For first-time flashing, ensure the green LED is flashing after long-pressing the side button.",
+      faq_2: "<b>Flashing fails</b>: Unplug the USB cable, long-press the side button until the green LED flashes, reconnect, and retry.",
+      faq_3: "<b>Screen remains dark after flashing</b>: Press the side button once to power on / restart.",
       faq_4: "<b>Cannot connect to Wi-Fi</b>: Verify 2.4 GHz band (5 GHz not supported) and password. You can also switch saved networks from the device's side menu -> Wi-Fi.",
-      faq_5: "<b>Revert to factory firmware</b>: Use M5Burner tool and select <code>STICKS3</code> to reflash the factory firmware.",
+      faq_5: "<b>Revert to factory firmware</b>: Use the M5Burner tool and select <code>STICKS3</code> to reflash the factory firmware.",
       disclaimer_summary: "Disclaimer (Please Read)",
-      disclaimer_1: "<b>Unofficial & As-Is:</b> This tool and included firmware are community-contributed open source works provided on an \"AS-IS\" basis, without warranties of any kind, express or implied, including fitness for a particular purpose.",
-      disclaimer_2: "<b>No Official Support:</b> Meta's Muse Gadget SDK itself is an experimental open-source project; Meta provides no official warranty or product support for ESP32 devices. This tool is not affiliated with Meta, Muse, or M5Stack, and no official support is provided.",
-      disclaimer_3: "<b>Use at Your Own Risk:</b> Flashing firmware, modifying settings, and using the device are entirely at your own risk. The authors and contributors shall not be liable for any device bricking, hardware malfunctions, data loss, battery/thermal issues, or any other damages arising from the use of this tool.",
-      footer_text: "Firmware: <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a> (Apache-2.0). Fonts: Noto Sans JP (SIL Open Font License 1.1) / GNU Unifont (GPL-2.0 with Font Exception). Graphics: LVGL (MIT). Flasher: ESP Web Tools 10.4.0 (Apache-2.0). See <a href=\"NOTICE\">NOTICE</a> and <a href=\"LICENSES/\">LICENSES/</a>.",
+      disclaimer_1: "<b>Unofficial & As-Is:</b> This tool and the included firmware are community-developed open-source works provided on an \"AS-IS\" basis, without warranties of any kind, express or implied, including fitness for a particular purpose.",
+      disclaimer_2: "<b>No Official Support:</b> Meta's Muse Gadget SDK is an experimental open-source project; Meta provides no official warranty or technical support for ESP32 devices. This tool is not affiliated with Meta, Muse, or M5Stack, and no official support is provided.",
+      disclaimer_3: "<b>Use at Your Own Risk:</b> Flashing firmware, modifying settings, and using the device are entirely at your own risk. The authors and contributors shall not be liable for device bricking, hardware malfunctions, data loss, battery/thermal issues, or any other damages arising from the use of this tool.",
+      footer_text: "Firmware: <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a> (Apache-2.0). Fonts: Noto Sans JP (SIL Open Font License 1.1) / Noto Emoji (SIL OFL 1.1) / GNU Unifont (GPL-2.0 with Font Exception). Graphics: LVGL (MIT). Flasher: ESP Web Tools 10.4.0 (Apache-2.0). See <a href=\"NOTICE\">NOTICE</a> and <a href=\"LICENSES/\">LICENSES/</a>.",
       footer_disclaimer: "This is an unofficial community tool and is not affiliated with Meta, Muse, or M5Stack.",
 
       loading_manifest: "Loading firmware metadata...",
-      err_manifest: "Could not read manifest: ",
-      need_flash: "Required flash ",
-      max_aps: "Device can store up to 8 networks.",
+      err_manifest: "Failed to load firmware metadata: ",
+      need_flash: "Required flash: ",
+      max_aps: "Maximum of 8 Wi-Fi networks can be registered.",
       scanning_wifi: "Scanning nearby Wi-Fi networks... (takes a few seconds)",
       rescanning_wifi: "No networks found. Retrying scan...",
-      added_scan: (ssid) => `Added "${ssid}" to list. Please enter the password.`,
-      no_aps: "No nearby access points found.",
-      aps_found: (n) => `Found ${n} access point(s).`,
+      added_scan: (ssid) => `Added "${ssid}". Please enter its password.`,
+      no_aps: "No nearby Wi-Fi networks found.",
+      aps_found: (n) => `Found ${n} Wi-Fi network(s).`,
       req_token: "Please enter a valid SDK token (e.g. mgst_...).",
       sending_token: "Sending SDK token... (device will reboot)",
       no_wifi_to_send: "No Wi-Fi networks entered to send.",
       invalid_ssid: (s) => `SSID "${s}" is invalid (1-32 chars, no commas or newlines).`,
       invalid_pass: (s) => `Password for SSID "${s}" is invalid (max 64 chars, no newlines).`,
       reg_wifi: (s) => `Registering Wi-Fi "${s}"...`,
-      testing_wifi: "Testing connection to registered network... (up to 45s)",
+      testing_wifi: "Testing Wi-Fi connection... (up to 45s)",
       settings_done: (ip) => `Settings applied successfully.${ip ? ` (Connected IP: ${ip})` : ""}`,
-      wifi_done: (ip) => ip ? `Connected to Wi-Fi (IP: ${ip}). Pairing preserved.` : "Wi-Fi profiles sent successfully.",
-      checking_saved: "Checking device configuration...",
-      saved_list: (n, list) => `Saved networks on device (${n}): ${list}`,
+      wifi_done: (ip) => ip ? `Connected to Wi-Fi (IP: ${ip}). Pairing preserved.` : "Wi-Fi settings sent successfully.",
+      checking_saved: "Reading saved Wi-Fi from device...",
+      saved_list: (n, list) => `Saved Wi-Fi on device (${n}, passwords not readable with this firmware): ${list}. Flash RH0.04 or later to load and edit passwords.`,
       saved_none: "No Wi-Fi networks saved on device.",
+      confirm_replace: "Replace current input with Wi-Fi list saved on device?",
+      loaded_saved: (n) => `Loaded ${n} Wi-Fi network(s) from device. Edit and click "Send Wi-Fi Only" to apply (deleted rows are also removed from device).`,
+      removing_wifi: (s) => `Removing "${s}" from device...`,
       confirm_forget: "This will erase all saved Wi-Fi profiles from the device. Are you sure? (Pairing with Muse will NOT be erased)",
       forgetting: "Erasing saved Wi-Fi networks from device...",
-      forgot_done: "All Wi-Fi profiles have been erased from the device.",
+      forgot_done: "All Wi-Fi profiles have been erased from device.",
       dialog_closed: "Flashing dialog closed. If screen is dark after flashing, press the side button once to boot, then proceed to '5. Send Settings to Device'."
     }
   };
@@ -307,6 +378,7 @@
   if (currentLang !== "ja" && currentLang !== "en") {
     currentLang = (navigator.language || "").toLowerCase().startsWith("ja") ? "ja" : "en";
   }
+  setLanguage(currentLang);
 
   const t = (key, ...args) => {
     const dict = I18N[currentLang] || I18N.ja;
@@ -332,11 +404,19 @@
     setLanguage(currentLang);
     refreshFirmware();
     drawAps();
+    drawScanList();
   }
 
   $("lang-btn").addEventListener("click", () => {
     currentLang = currentLang === "ja" ? "en" : "ja";
     localStorage.setItem(LANG_KEY, currentLang);
+    // Clear transient status notifications to prevent mixed language messages
+    $("install-status").textContent = "";
+    $("install-status").className = "status";
+    $("token-status").textContent = "";
+    $("token-status").className = "status";
+    $("send-status").textContent = "";
+    $("send-status").className = "status";
     updateStaticTexts();
   });
 
@@ -396,6 +476,8 @@
   const AP_KEY = "muse-wifi-list";
   const rows = $("ap-rows");
   let aps = [];
+  let deviceLoaded = false;       // the table came from the device's NVS
+  let loadedOrigins = new Set();  // SSIDs the device had when it was loaded
   try {
     const raw = JSON.parse(localStorage.getItem(AP_KEY) ?? "[]");
     aps = Array.isArray(raw) ? raw.map((item) => ({ ssid: item.ssid || "", pass: "" })) : [];
@@ -412,8 +494,10 @@
     rows.innerHTML = "";
     aps.forEach((ap, i) => {
       const tr = document.createElement("tr");
+      if (ap.origin) tr.classList.add("from-device");
 
       const ssid = document.createElement("input");
+      ssid.type = "text";
       ssid.value = ap.ssid;
       ssid.placeholder = "MyHome-WiFi";
       ssid.spellcheck = false;
@@ -489,23 +573,19 @@
     }
   }
 
-  $("ap-scan").addEventListener("click", () => withPort($("send-status"), async (port) => {
-    show($("send-status"), t("scanning_wifi"));
-    let found = await scanWifi(port);
-    if (!found.length) {
-      show($("send-status"), t("rescanning_wifi"));
-      await sleep(4000);
-      found = await scanWifi(port);
-    }
-    $("scan-box").hidden = false;
+  // Scan results cache to re-render properly on language switch
+  let lastScanResults = [];
+
+  function drawScanList() {
+    if (!lastScanResults.length) return;
     const list = $("scan-list");
     list.innerHTML = "";
-    for (const ap of found) {
+    const noSec = currentLang === "en" ? "Open" : "暗号化なし";
+    for (const ap of lastScanResults) {
       const li = document.createElement("li");
       const b = document.createElement("button");
       b.className = "button secondary small";
       b.type = "button";
-      const noSec = currentLang === "en" ? "Open" : "暗号化なし";
       b.textContent = `${ap.ssid} (${ap.rssi} dBm${ap.secure ? "" : ` / ${noSec}`})`;
       b.addEventListener("click", () => {
         if (aps.length >= 8 && !aps.some((a) => a.ssid === ap.ssid)) {
@@ -526,8 +606,22 @@
       li.append(b);
       list.append(li);
     }
+  }
+
+  $("ap-scan").addEventListener("click", () => withPort($("send-status"), async (port) => {
+    show($("send-status"), t("scanning_wifi"));
+    let found = await scanWifi(port);
     if (!found.length) {
-      list.innerHTML = `<li class="note">${t("no_aps")}</li>`;
+      show($("send-status"), t("rescanning_wifi"));
+      await sleep(4000);
+      found = await scanWifi(port);
+    }
+    lastScanResults = found;
+    $("scan-box").hidden = false;
+    if (found.length) {
+      drawScanList();
+    } else {
+      $("scan-list").innerHTML = `<li class="note">${t("no_aps")}</li>`;
     }
     show($("send-status"), t("aps_found", found.length), "ok");
   }));
@@ -545,7 +639,7 @@
 
     if (sendAps) {
       const filled = aps.filter((a) => a.ssid.trim().length > 0);
-      if (!filled.length && !sendTok) {
+      if (!filled.length && !sendTok && !deviceLoaded) {
         throw new Error(t("no_wifi_to_send"));
       }
       for (const ap of filled) {
@@ -557,9 +651,29 @@
         }
       }
 
-      for (const ap of filled) {
+      // A list loaded from the device is the whole truth: rows the user
+      // deleted go with it too.
+      if (deviceLoaded) {
+        const present = new Set(filled.map((a) => a.ssid));
+        for (const ssid of loadedOrigins) {
+          if (present.has(ssid)) continue;
+          show($("send-status"), t("removing_wifi", ssid));
+          await removeWifi(port, ssid);
+        }
+      }
+
+      // Add in reverse so the first row ends up first on the device: each add
+      // moves its network to the front.
+      for (const ap of [...filled].reverse()) {
         show($("send-status"), t("reg_wifi", ap.ssid));
         await addWifi(port, ap.ssid, ap.pass);
+      }
+
+      if (deviceLoaded) {
+        aps = aps.map((a) => ({ ssid: a.ssid, pass: a.pass, origin: a.ssid || undefined }));
+        loadedOrigins = new Set(filled.map((a) => a.ssid));
+        saveAps();
+        drawAps();
       }
 
       if (filled.length) {
@@ -582,13 +696,30 @@
   }));
 
   $("show-saved").addEventListener("click", () => withPort($("send-status"), async (port) => {
+    if (aps.some((a) => a.ssid.trim()) && !confirm(t("confirm_replace"))) return;
     show($("send-status"), t("checking_saved"));
-    const saved = await listWifi(port);
+    let saved;
+    try {
+      saved = await listWifiFull(port);
+    } catch (e) {
+      if (e.code !== "no_response") throw e;
+      // Older firmware knows ">wifi" but not ">wifi.list": names only.
+      const names = await listWifi(port);
+      show(
+        $("send-status"),
+        names.length ? t("saved_list", names.length, names.join(" / ")) : t("saved_none"),
+        "ok",
+      );
+      return;
+    }
+    aps = saved.map((n) => ({ ssid: n.ssid, pass: n.pass, origin: n.ssid }));
+    deviceLoaded = true;
+    loadedOrigins = new Set(saved.map((n) => n.ssid));
+    saveAps();
+    drawAps();
     show(
       $("send-status"),
-      saved.length
-        ? t("saved_list", saved.length, saved.join(" / "))
-        : t("saved_none"),
+      saved.length ? t("loaded_saved", saved.length) : t("saved_none"),
       "ok",
     );
   }));
@@ -598,6 +729,11 @@
     withPort($("send-status"), async (port) => {
       show($("send-status"), t("forgetting"));
       await forgetWifi(port);
+      deviceLoaded = false;
+      loadedOrigins = new Set();
+      aps = aps.map((a) => ({ ssid: a.ssid, pass: a.pass }));
+      saveAps();
+      drawAps();
       show($("send-status"), t("forgot_done"), "ok");
     });
   });
