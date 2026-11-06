@@ -49,7 +49,7 @@
 
   <section class="card">
     <h2 data-i18n="sec2_title">2. ファームウェアの書き込み</h2>
-    <p class="note" data-i18n-html="sec2_note">本ツールで書き込むファームウェアは、公式の <a href="https://github.com/facebookincubator/muse-gadget-sdk" target="_blank" rel="noopener">muse-gadget-sdk</a> をベースに、<b>日本語フォント（Noto Sans JP）の最適化</b>、<b>絵文字（Noto Emoji）のモノクロ表示</b>、<b>マイクボタンのダブルクリックで最新の Muse メッセージを表示</b>、<b>Wi-Fi 複数登録・本体メニュー切替機能</b>、<b>アバターを非表示にしたテキスト主体の画面</b>（返答は省略せず自動スクロール）、<b>①②③ などの環境依存文字への対応</b> を追加した M5StickS3 向けのカスタムビルドです。現在のビルド: <b>RH0.07 - 20261105</b>。</p>
+    <p class="note" data-i18n-html="sec2_note">本ツールで書き込むファームウェアは、公式の <a href="https://github.com/facebookincubator/muse-gadget-sdk" target="_blank" rel="noopener">muse-gadget-sdk</a> をベースに、<b>日本語フォント（Noto Sans JP）の最適化</b>、<b>絵文字（Noto Emoji）のモノクロ表示</b>、<b>マイクボタンの1秒長押しで録音開始</b>、<b>ダブルクリックで最新の Muse メッセージを表示</b>、<b>Wi-Fi 複数登録・本体メニュー切替機能</b>、<b>アバターを非表示にしたテキスト主体の画面</b>（返答は省略せず自動スクロール）、<b>①②③ などの環境依存文字への対応</b> を追加した M5StickS3 向けのカスタムビルドです。現在のビルド: <b>RH0.09 - 20261107</b>。</p>
     <div class="field">
       <label class="label" data-i18n="sec2_font_label">画面のフォント</label>
       <label class="radio"><input type="radio" name="font" value="noto" checked>
@@ -115,12 +115,14 @@
 
   <details class="card">
     <summary data-i18n="history_summary">バージョン履歴</summary>
-    <p class="note" data-i18n="history_note">公開ビルドの履歴です。各ビルドは累積で、最新は RH0.07 です。</p>
+    <p class="note" data-i18n="history_note">公開ビルドの履歴です。各ビルドは累積で、最新は RH0.09 です。</p>
     <table class="versions">
       <thead>
         <tr><th data-i18n="history_build">ビルド</th><th data-i18n="history_date">日付</th><th data-i18n="history_changes">主な変更</th></tr>
       </thead>
       <tbody>
+        <tr><td>RH0.09</td><td>2026-11-07</td><td data-i18n="hist_009">スリープ時の Wi-Fi 休止を60秒に短縮（復帰は約3秒）。スリープ中の CPU 起床を5秒間隔に減らして電池持ちを改善。起床直後の最新メッセージ取得を安定化。</td></tr>
+        <tr><td>RH0.08</td><td>2026-11-06</td><td data-i18n="hist_008">マイクボタンは1秒長押しで録音開始。短いタップやダブルクリックでは録音しない。ダブルクリックで最新メッセージを取得しやすく改善（間隔を広げ、失敗時は再取得）。</td></tr>
         <tr><td>RH0.07</td><td>2026-11-05</td><td data-i18n="hist_007">上部ステータスの Wi-Fi アイコンを画面中央に固定。電池残量表示の変化で位置が動かないよう改善。</td></tr>
         <tr><td>RH0.06</td><td>2026-11-05</td><td data-i18n="hist_006">マイクボタンのダブルクリックで最新の Muse メッセージを取得・表示する機能を追加。</td></tr>
         <tr><td>RH0.05</td><td>2026-11-05</td><td data-i18n="hist_005">Noto Emoji 16px モノクロによる絵文字表示に対応（単一コードポイント、ZWJ・肌色・国旗は非対応）。</td></tr>
@@ -181,7 +183,7 @@
       sec1_step2: "<b>初回書き込み時:</b> 本体の<b>側面ボタンを長押し</b>し、内部の<b>緑色 LED が点滅</b>したら準備完了（ダウンロードモード）です。",
       sec1_step3: "<b>ファームウェア更新時:</b> すでに Muse が動作している場合は、ボタンを押さずにそのまま接続してください。",
       sec2_title: "2. ファームウェアの書き込み",
-      sec2_note: "本ツールで書き込むファームウェアは、公式の <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a> をベースに、<b>日本語フォント（Noto Sans JP）の最適化</b>、<b>絵文字（Noto Emoji）のモノクロ表示</b>、<b>マイクボタンのダブルクリックで最新の Muse メッセージを表示</b>、<b>Wi-Fi 複数登録・本体メニュー切替機能</b>、<b>アバターを非表示にしたテキスト主体の画面</b>（返答は省略せず自動スクロール）、<b>①②③ などの環境依存文字への対応</b> を追加した M5StickS3 向けのカスタムビルドです。現在のビルド: <b>RH0.07 - 20261105</b>。",
+      sec2_note: "本ツールで書き込むファームウェアは、公式の <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a> をベースに、<b>日本語フォント（Noto Sans JP）の最適化</b>、<b>絵文字（Noto Emoji）のモノクロ表示</b>、<b>マイクボタンの1秒長押しで録音開始</b>、<b>ダブルクリックで最新の Muse メッセージを表示</b>、<b>Wi-Fi 複数登録・本体メニュー切替機能</b>、<b>アバターを非表示にしたテキスト主体の画面</b>（返答は省略せず自動スクロール）、<b>①②③ などの環境依存文字への対応</b> を追加した M5StickS3 向けのカスタムビルドです。現在のビルド: <b>RH0.09 - 20261107</b>。",
       sec2_font_label: "画面のフォント",
       sec2_font_noto: "Noto Sans JP（推奨・16px アンチエイリアス・SIL OFL 1.1）",
       sec2_font_default: "標準 GNU Unifont（16px ビットマップ・全 CJK 収録・GPL-2.0）",
@@ -210,7 +212,7 @@
       sec5_btn_forget: "保存済みの Wi-Fi を全消去",
       sec5_load_note: "「本体から読み込む」で、本体に保存されている SSID とパスワードを一覧に読み込めます。読み込んだパスワードはブラウザのストレージには保存されません。読み込み後に削除した行は「Wi-Fi のみ送信」で本体からも削除されます。",
       history_summary: "バージョン履歴",
-      history_note: "公開ビルドの履歴です。各ビルドは累積で、最新は RH0.07 です。",
+      history_note: "公開ビルドの履歴です。各ビルドは累積で、最新は RH0.09 です。",
       history_build: "ビルド",
       history_date: "日付",
       history_changes: "主な変更",
@@ -221,6 +223,8 @@
       hist_005: "Noto Emoji 16px モノクロによる絵文字表示に対応（単一コードポイント、ZWJ・肌色・国旗は非対応）。",
       hist_006: "マイクボタンのダブルクリックで最新の Muse メッセージを取得・表示する機能を追加。",
       hist_007: "上部ステータスの Wi-Fi アイコンを画面中央に固定。電池残量表示の変化で位置が動かないよう改善。",
+      hist_008: "マイクボタンは1秒長押しで録音開始。短いタップやダブルクリックでは録音しない。ダブルクリックで最新メッセージを取得しやすく改善（間隔を広げ、失敗時は再取得）。",
+      hist_009: "スリープ時の Wi-Fi 休止を60秒に短縮（復帰は約3秒）。スリープ中の CPU 起床を5秒間隔に減らして電池持ちを改善。起床直後の最新メッセージ取得を安定化。",
       faq_summary: "困ったとき（FAQ）",
       faq_1: "<b>ポート一覧にデバイスが表示されない</b>: 充電専用ケーブルではなく、データ通信対応ケーブルであることを確認してください。初回書き込み時は、側面ボタン長押しで内部の緑色 LED が点滅していることを確認してください。",
       faq_2: "<b>書き込みが失敗する</b>: 一度 USB ケーブルを抜き、側面ボタン長押しで緑色 LED 点滅を確認してから再度接続してお試しください。",
@@ -283,7 +287,7 @@
       sec1_step2: "<b>First-time flashing:</b> <b>Long-press the side button</b> until the internal <b>green LED flashes</b> (Download Mode).",
       sec1_step3: "<b>Updating firmware:</b> If Muse is already running, connect directly without holding the button.",
       sec2_title: "2. Flash Firmware",
-      sec2_note: "This firmware is a custom M5StickS3 build based on the official <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a>. It adds optimized Japanese fonts (Noto Sans JP), monochrome emoji, fetching latest messages via mic double-click, multi-Wi-Fi profile switching, and auto-scrolling full text replies. Current build: <b>RH0.07 - 20261105</b>.",
+      sec2_note: "This firmware is a custom M5StickS3 build based on the official <a href=\"https://github.com/facebookincubator/muse-gadget-sdk\" target=\"_blank\" rel=\"noopener\">muse-gadget-sdk</a>. It adds optimized Japanese fonts (Noto Sans JP), monochrome emoji, record-on-one-second-hold for the mic button, fetching latest messages via mic double-click, multi-Wi-Fi profile switching, and auto-scrolling full text replies. Current build: <b>RH0.09 - 20261107</b>.",
       sec2_font_label: "Display Font",
       sec2_font_noto: "Noto Sans JP (Recommended, 16px antialiased, SIL OFL 1.1)",
       sec2_font_default: "Standard GNU Unifont (16px bitmap, full CJK, GPL-2.0)",
@@ -312,7 +316,7 @@
       sec5_btn_forget: "Erase All Saved Wi-Fi",
       sec5_load_note: "\"Load from Device\" reads saved SSIDs and passwords from the device into the table. Loaded passwords are never saved in browser storage. Any rows deleted after loading are also removed from the device when clicking \"Send Wi-Fi Only\".",
       history_summary: "Version History",
-      history_note: "History of public builds. Each build is cumulative; the latest is RH0.07.",
+      history_note: "History of public builds. Each build is cumulative; the latest is RH0.09.",
       history_build: "Build",
       history_date: "Date",
       history_changes: "Changes",
@@ -323,6 +327,8 @@
       hist_005: "Added monochrome Noto Emoji 16px support (single code points; ZWJ, skin tones, and flags are not supported).",
       hist_006: "Added feature to fetch and display the latest Muse message by double-clicking the mic button.",
       hist_007: "Fixed top Wi-Fi icon position at screen center; no longer shifts when battery percentage changes.",
+      hist_008: "The mic button records only after a one-second hold; short taps and double-clicks no longer record. Double-click is easier to land and retries a failed latest-message fetch.",
+      hist_009: "Wi-Fi naps after 60 s asleep (was 2 min) and Link is back about 3 s after waking; the CPU wakes every 5 s instead of every second while asleep. The latest-message fetch is steady right after a wake.",
       faq_summary: "Troubleshooting (FAQ)",
       faq_1: "<b>Device not listed in ports</b>: Verify that you are using a data-capable USB cable, not a charge-only cable. For first-time flashing, ensure the green LED is flashing after long-pressing the side button.",
       faq_2: "<b>Flashing fails</b>: Unplug the USB cable, long-press the side button until the green LED flashes, reconnect, and retry.",

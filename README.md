@@ -16,12 +16,12 @@ A standalone Web flasher to flash and configure the Muse Gadget firmware on the 
 Works completely offline without external CDN dependencies.
 
 > **About the Firmware**  
-> The firmware included here is a custom build based on the official [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk), enhanced with **optimized Japanese typography (Noto Sans JP)**, **monochrome emoji (Noto Emoji)**, **multi-Wi-Fi profile storage with on-device menu switching**, a **text-first screen without the avatar** (replies scroll instead of being cut), and **support for environment-dependent characters such as ①②③**.  
-> Current build: **RH0.07 - 20261105**
+> The firmware included here is a custom build based on the official [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk), enhanced with **optimized Japanese typography (Noto Sans JP)**, **monochrome emoji (Noto Emoji)**, **hold-to-record (one second) on the mic button**, **multi-Wi-Fi profile storage with on-device menu switching**, a **text-first screen without the avatar** (replies scroll instead of being cut), and **support for environment-dependent characters such as ①②③**.  
+> Current build: **RH0.09 - 20261107**
 >
 > Emoji are drawn from Noto Emoji's monochrome 16 px face. Single code points render; ZWJ sequences, skin tones and flags are not shaped, so their base characters appear separately.
 >
-> Double-click the mic (front) button to fetch and show the latest Muse message from the chat history. A single short tap still asks you to hold longer to talk.
+> Hold the mic (front) button for one second to start recording: a short tap or a double-click never records, so it can't send an accidental note. Double-click to fetch and show the latest Muse message from the chat history.
 
 ### How to Use
 
@@ -56,12 +56,12 @@ M5StickS3 に Muse Gadget ファームウェアを書き込み、初期設定（
 外部 CDN やインターネット接続への依存がなく、ローカル環境でも動作します。
 
 > **ファームウェアについて**  
-> 本ツールで書き込まれるファームウェアは、公式の [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk) をベースに、**日本語フォント（Noto Sans JP）の最適化**、**絵文字（Noto Emoji）のモノクロ表示**、**Wi-Fi 複数登録・本体メニュー切替機能**、**アバターを廃したテキスト主体の画面**（返答は省略せず自動スクロール）、**①②③ などの環境依存文字への対応** を追加した M5StickS3 向けのカスタムビルドです。  
-> 現在のビルド: **RH0.07 - 20261105**
+> 本ツールで書き込まれるファームウェアは、公式の [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk) をベースに、**日本語フォント（Noto Sans JP）の最適化**、**絵文字（Noto Emoji）のモノクロ表示**、**マイクボタンの1秒長押しで録音開始**、**Wi-Fi 複数登録・本体メニュー切替機能**、**アバターを廃したテキスト主体の画面**（返答は省略せず自動スクロール）、**①②③ などの環境依存文字への対応** を追加した M5StickS3 向けのカスタムビルドです。  
+> 現在のビルド: **RH0.09 - 20261107**
 >
 > 絵文字は Noto Emoji のモノクロ 16px フォントで描画します。単一コードポイントの絵文字に対応し、ZWJ 連結・肌色・旗の合成には対応しません（構成する各文字が個別に表示されます）。
 >
-> マイク（前面）ボタンをダブルクリックすると、チャット履歴から最新の Muse メッセージを取得して表示します。短いシングルタップは従来どおり「長押ししてください」の案内になります。
+> マイク（前面）ボタンは1秒以上長押しすると録音を開始します。短いタップやダブルクリックでは録音しないため、誤って音声メモが送られることはありません。ダブルクリックすると、チャット履歴から最新の Muse メッセージを取得して表示します。
 
 ### 使い方
 
